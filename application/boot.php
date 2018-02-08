@@ -8,19 +8,20 @@
     {
         setcookie('userEmail', $_SESSION['email'], time()-86400*7);
     }
-    //define('HOSTNAME', 'localhost');
-    //define('USERNAME', '');
-    //define('PASSWORD', '');
-    //define('DATABASE', '');
+    define('HOSTNAME', 'localhost');
+    define('USERNAME', 'root');
+    define('PASSWORD', '');
+    define('DATABASE', '');
 
 
 
-    //$f = new PDO("mysql:dbname=" . DATABASE. ";host=" . HOSTNAME, USERNAME, PASSWORD);
+    $f = new PDO("mysql:dbname=" . DATABASE. ";host=" . HOSTNAME, USERNAME, PASSWORD);
 
     //ss\application\core\Route::start();
 
-    require_once 'core/model.php';
-    require_once 'core/view.php';
+    require_once 'core/Route.php';
+    require_once 'core/Model.php';
+    require_once 'core/View.php';
     require_once 'core/Controller.php';
-    require_once 'core/route.php';
+
     Route::start(); // запускаем маршрутизатор

@@ -1,7 +1,19 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: Sergey
-     * Date: 07.02.2018
-     * Time: 15:32
-     */
+
+    namespace application\core;
+
+    class View
+    {
+        public function __construct()
+        {
+
+        }
+
+        public function generate($content_view, $template_view, $data = null)
+        {
+            include 'application/views/' . $template_view;
+        }
+    }
+
+
+
