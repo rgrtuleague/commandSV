@@ -6,7 +6,6 @@
     {
         static function start()
         {
-
             // контроллер и действие по умолчанию
             $controller_name = 'main';
             $action_name = 'index';
@@ -14,25 +13,25 @@
             $routes = explode('/', $_SERVER['REQUEST_URI']);
 
             // получаем имя контроллера
-            if ( !empty($routes[1]) )
+            if ( !empty($routes[2]) )
             {
-                $controller_name = $routes[1];
+                $controller_name = $routes[2];
             }
 
             // получаем имя экшена
-            if ( !empty($routes[2]) )
+            if ( !empty($routes[3]) )
             {
-                $action_name = $routes[2];
+                $action_name = $routes[3];
                 /**
                  * А что если пришел GET-запрос?
                  */
-                $t = $routes[2];
+                $t = $routes[3];
                 if($t[0] === '?')
                 {
                     $action_name = 'index';
                 }
             }
-            else if ($routes[1][0] === '?')
+            else if ($routes[2][0] === '?')
             {
                 if(!empty($_GET))
                 {
@@ -57,8 +56,10 @@
 
             $controller_file = $controller_name.'.php';
             $controller_path = "application/controllers/".$controller_file;
+
             if(file_exists($controller_path))
             {
+
                 include "application/controllers/".$controller_file;
 
                 $controller = new $controller_name();
@@ -66,6 +67,7 @@
 
                 if(method_exists($controller, $action))
                 {
+
                     // вызываем действие контроллера
                     $controller->$action();
                 }
