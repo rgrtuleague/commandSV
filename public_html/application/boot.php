@@ -21,4 +21,4 @@
     require_once 'core/View.php';
     require_once 'core/Controller.php';
 
-    application\core\Route::start(); // запускаем маршрутизатор
+    ss\application\core\Route::start(); // запускаем маршрутизатор

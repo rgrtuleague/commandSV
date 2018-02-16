@@ -1,12 +1,12 @@
 <?php
 
-    class Controller_main extends application\core\Controller
+    class Controller_main extends ss\application\core\Controller
     {
 
         public function __construct()
         {
             $this->model = new Model_main();
-            $this->view = new application\core\View();
+            $this->view = new ss\application\core\View();
         }
 
         public function action_index()

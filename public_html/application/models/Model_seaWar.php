@@ -1,6 +1,6 @@
 <?php
 
-    class Model_main extends application\core\Model
+    class Model_seaWar extends ss\application\core\Model
     {
         public function __construct()
         {
